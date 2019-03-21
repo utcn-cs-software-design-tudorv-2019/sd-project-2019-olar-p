@@ -1,4 +1,4 @@
-- O aplicatie pentru "Rent a car" in Android.
-- Avea doua tipuri de useri: client si administrator
-- Clientul va putea sa inchireze o masina in functie de cateva caracteristicii precum si sa se inregistreze
-- Adminul va putea sa adauge oferte noi sau sa administreze un cont de client
+- An application "Rent a car" in Android.
+- The application will have two types of users: client and administrator
+- The client will have the possibility to rent a car based on some characteristics of cars or prices
+- The admin can add some new offers of cars and also to administrate a client account
