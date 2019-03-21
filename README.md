@@ -1,3 +1,4 @@
-Please modify this file so it contains ONLY your full name: Surname & First Name
-
-You can find the related resources at https://github.com/utcn-cs-software-design-tudorv-2019/LabInfo
+- O aplicatie pentru "Rent a car" in Android.
+- Avea doua tipuri de useri: client si administrator
+- Clientul va putea sa inchireze o masina in functie de cateva caracteristicii precum si sa se inregistreze
+- Adminul va putea sa adauge oferte noi sau sa administreze un cont de client
