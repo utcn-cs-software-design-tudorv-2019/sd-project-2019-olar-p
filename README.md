@@ -1,4 +1,4 @@
-- An application "Rent a car" in Android.
+- An application "Rent a car" as SpringBootApplication.
 - The application will have two types of users: client and administrator
 - The client will have the possibility to rent a car based on some characteristics of cars or prices
 - The admin can add some new offers of cars and also to administrate a client account
