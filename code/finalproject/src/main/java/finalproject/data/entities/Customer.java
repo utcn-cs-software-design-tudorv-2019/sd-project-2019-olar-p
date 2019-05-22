@@ -21,6 +21,8 @@ public class Customer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "customerid", nullable=false)
 	private String customerid;
+	@Column(name = "name", nullable = false)
+	private String name;
 	@Column(name = "username", nullable = false)
 	private String username;
 	@Column(name = "password", nullable = false)
@@ -32,12 +34,13 @@ public class Customer {
 		
 	}
 
-	public Customer(String customerid, String username, String password, ArrayList<Car> myCars) {
+	public Customer(String customerid, String username, String password, ArrayList<Car> myCars, String name) {
 		super();
 		this.customerid = customerid;
 		this.username = username;
 		this.password = password;
 		this.myCars = new ArrayList<Car>();
+		this.name = name;
 	}
 
 	public String getCustomerId() {
@@ -70,6 +73,15 @@ public class Customer {
 
 	public void setMyCars(List<Car> myCars) {
 		this.myCars = myCars;
+	}
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override

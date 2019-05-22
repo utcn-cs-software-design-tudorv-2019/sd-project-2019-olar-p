@@ -22,18 +22,15 @@ public class Car {
 	private float price;
 	@Column(name = "rented", nullable = false)
 	private String rented;
-	@Column(name = "location", nullable = false)
-	private String location;
+
 	
-	
-	public Car(int carid, String model, String year, float price, String rented, String location) {
+	public Car(int carid, String model, String year, float price, String rented) {
 		super();
 		this.carid = carid;
 		this.model = model;
 		this.year = year;
 		this.price = price;
 		this.rented = rented;
-		this.location = location;
 	}
 	public int getCarid() {
 		return carid;
@@ -65,12 +62,5 @@ public class Car {
 	public void setRented(String rented) {
 		this.rented = rented;
 	}
-	public String getLocation() {
-		return location;
-	}
-	public void setLocation(String location) {
-		this.location = location;
-	}
-	
 	
 }

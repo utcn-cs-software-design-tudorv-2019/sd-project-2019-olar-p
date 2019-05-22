@@ -1,7 +1,10 @@
 package finalproject.data.entities;
 
+import java.util.Calendar;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -9,76 +12,66 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "rental")
 public class Rental {
-
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int rentalid;
+    @Column(name = "rental_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-	@ManyToOne
-	@OnDelete(action = OnDeleteAction.CASCADE)
-	@JoinColumn(name = "customerid")
-	private Customer customer;
+    @Column(name = "start_date")
+    private Calendar startDate;
 
-	@ManyToOne
-	@OnDelete(action = OnDeleteAction.CASCADE)
-	@JoinColumn(name = "carid")
-	private Car car;
-	
-	@Column(name = "location", nullable = false)
-	private String location;
-	
-	public Rental() {
+    @Column(name = "end_date")
+    private Calendar endDate;
 
-	}
-	
-	public Rental(Customer customer, Car car) {
-		this.car = car;
-		this.customer = customer;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "car_id")
+    private Car car;
 
-	public int getRentalid() {
-		return rentalid;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 
-	public void setRentalid(int rentalid) {
-		this.rentalid = rentalid;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public Customer getCustomer() {
-		return customer;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
+    public Calendar getStartDate() {
+        return startDate;
+    }
 
-	public Car getCar() {
-		return car;
-	}
+    public void setStartDate(Calendar startDate) {
+        this.startDate = startDate;
+    }
 
-	public void setCar(Car car) {
-		this.car = car;
-	}
+    public Calendar getEndDate() {
+        return endDate;
+    }
 
-	public String getLocation() {
-		return location;
-	}
+    public void setEndDate(Calendar endDate) {
+        this.endDate = endDate;
+    }
 
-	public void setLocation(String location) {
-		this.location = location;
-	}
+    public Car getCar() {
+        return car;
+    }
 
-	@Override
-	public String toString() {
-		return "Rental [rentalid=" + rentalid + ", customer=" + customer + ", car=" + car + ", location=" + location
-				+ "]";
-	}
-	
-	
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 }
