@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: head">
+</head>
+
+<body>
+	<div class = "container">
+	<header class= "jumbotron hero-spacer">
+	<h1> Available cars list</h1>
+	</header>
+	</div>
+	<hr>
+	<div class = "row text-center">
+		<div class = "col-md-3 col-sm-6 hero-feature" th:each="cam : ${cars}">
+  			<h3 th:text="${cam.name}"></h3>
+   	 		<p th:text="${cam.price}"></p>
+  			  <p th:text="${cam.year}"></p>
+  			  <a href="#" class="btn btn-primary" th:href="@{/cardetail(car_name=${cam.name})}">Book Now!</a>
+		</div>
+	</div>
+</body>
+
+</html>
